@@ -1,0 +1,43 @@
+{% extends 'users/base.html' %}
+{%  load static %}
+{% block title %}LS{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'users/css/main.css' %}">
+<style>
+ul{
+    margin: 20px;
+}
+
+li {
+    list-style: none;
+    font-size: 20px;
+    margin: 30px 0px;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: white;
+    position: relative;
+}
+
+li a {
+    color: white;
+    font-size: 25px;
+}
+
+li:hover{
+    border-color: #2F85ED;
+}
+</style>
+<div style="margin: 30px 15px"><span style="font-size:2rem; color: white">Welcome To  </span><span class="logo" style="font-size:2rem">Let's Share!</span></div>
+<div class="text">In this site, you can post whatever you want.</div>
+<div class="text">And even can make a friend!</div>
+<div class="text">Share your moments with everyone!</div>
+<div class="text">Join and Enjoy!</div>
+<div style="margin-top:50px; margin-left:40px; border-width: 3px; border-color: white; border-style: solid; position: absolute">
+    <div class="text", style="font-size:30px; font-weight:bold">Posts</div>
+    <ul>
+        {% for post in object_list %}
+            <li><a href="{% url 'articledetail' post.pk %}">{{post.title}} - {{post.author}}</a> : {{post.created}}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock content %}

@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Tapestry&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    padding: 0;
+    background-color: black;
+}
+
+.container {
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+}
+
+.logo {
+    color: pink;
+    font-weight: bold;
+    font-family: "Tapestry", cursive;
+}
+
+a {
+    text-decoration: none;
+}
+
+.hello-msg{
+    font-size: 1.5rem;
+    color: white;
+    margin: 5px 20px;
+}
+
+li{
+    list-style: none;
+    color: white;
+}
+
+.nav-elem ul {
+    margin-right: 30px;
+    padding: 0;
+    display: flex;
+}
+
+.nav-elem li {
+    list-style: none;
+    border-radius: 7px;
+    margin: 5px 10px 0 10px;
+    padding: 5px 15px;
+    position: relative;
+}
+
+.nav-elem li a {
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    display: block;
+}
+
+.btn {
+    background-color: #33ccff;
+}
+
+button {
+    border: none;
+    padding: 5px 15px;
+    font-size: 17px;
+    color: white;
+    cursor: pointer;
+    margin: 10px 20px;
+}
+
+.btn:hover{
+    background-color: #7AB7F4;
+}
+
+.opt:hover{
+    background-color: #555;
+}
+
+.text {
+    color: white;
+    font-size: 1.5rem;
+    margin: 15px 30px;
+}

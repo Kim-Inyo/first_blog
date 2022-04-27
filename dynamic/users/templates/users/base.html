@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'users/css/main.css' %}">
+
+    <!--Font Link-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Open+Sans:wght@800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div><a class="logo" style="font-size: 3rem; margin-left: 30px; display:block" href="{% url 'home' %}">Let's Share</a></div>
+        <div class="nav-elem">
+           <ul>
+               {% if user.is_authenticated %}
+                   <span class="hello-msg">Hello, {{request.user.username}}</span>
+                   <li class="btn"><a href="{% url 'post-creation' %}">Create Post</a></li>
+                   <li class="btn"><a href="{% url 'profile' %}">Profile</a></li>
+                   <li class="btn"><a href="{% url 'logout' %}">Logout</a></li>
+               {% else %}
+                   <li class="btn"><a href="{% url 'signup' %}">Sign Up</a></li>
+                   <li class="btn"><a href="{% url 'login' %}">Login</a></li>
+               {% endif %}
+            </ul>
+        </div>
+    </nav>
+    <div>
+        {% block content %}
+        {% endblock content %}
+    </div>
+</body>
+</html>

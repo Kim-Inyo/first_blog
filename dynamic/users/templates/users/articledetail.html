@@ -1,0 +1,10 @@
+{% extends 'users/base.html' %}
+{%  load static %}
+{% block title %}LS{% endblock %}
+{% block content %}
+<h1 style="margin: 30px 15px 5px; font-size:2.5rem; color: white">{{post.title}}</h1>
+<small style="margin-left: 15px; color:white; font-size: 15px">By: {{post.author}} at {{post.created}}</small><br/>
+<hr/>
+<br/>
+<div style="margin:10px 30px; color: white; font-size: 25px">{{post.body}}</div>
+{% endblock content %}
